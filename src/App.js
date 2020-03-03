@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Container } from 'react-bootstrap';
+import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import NavBar from './NavBar';
+import LoginPage from './LoginPage';
+import RegisterPage from './RegisterPage';
+import HomePage from './HomePage';
+import { BaseApi } from './api';
+import { login } from './actions';
 
-function App() {
+
+function App({ dispatch }) {
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const response = await BaseApi.get('user');
+      dispatch(login(response.data));
+    };
+
+    if (localStorage.getItem('token')) {
+      fetchUserData();
+    }
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid="true">
+      <NavBar />
+      <Switch>
+        <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegisterPage} />
+        <Route path="/" component={HomePage} />
+      </Switch>
+    </Container>
   );
 }
 
-export default App;
+export default connect()(App);
