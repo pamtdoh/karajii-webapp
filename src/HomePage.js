@@ -1,11 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Landing from './Landing';
+
+import Catalogue from './Catalogue'
+
 const HomePage = ({ user }) => {
   if (user == null) {
     return (
       <div className="mt-5 text-center">
         <h1>Welcome to KARAJII Movies</h1>
+        <Landing />
+        <Catalogue />
       </div>
     )  
   } else {
