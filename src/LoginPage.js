@@ -52,7 +52,7 @@ function LoginForm({ dispatch }) {
           onChange={event => setLoginData({...loginData, password: event.target.value})} />
       </Form.Group>
       {errorMessage !== "" ? <Form.Text className="text-danger my-1">{errorMessage}</Form.Text> : null}
-      <Button type="submit" className="ml-auto">
+      <Button type="submit" className="ml-auto btn-warning">
         Log In
       </Button>
     </Form>
@@ -62,7 +62,7 @@ function LoginForm({ dispatch }) {
 function LoginPage( {dispatch} ) {
   return (
     <div className="d-flex justify-content-center m-5">
-      <Card>
+      <Card style={{ width: '20rem' }}>
         <Card.Body>
           <Card.Title>Log In</Card.Title>
           <LoginForm dispatch={dispatch} />

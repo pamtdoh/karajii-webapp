@@ -11,13 +11,13 @@ function NavBar({ dispatch, user }) {
   }
 
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" className="sticky-top">
       <Link to="/">
-        <Navbar.Brand>Karajii</Navbar.Brand>
+        <Navbar.Brand><b>KARAJII</b></Navbar.Brand>
       </Link>
-      <Nav className="mr-auto">
+      <Nav className="mr-auto sticky-top">
         <Link to="/heh" className="nav-link">
-          heh
+          Ganteng gw
         </Link>
       </Nav>
       {user == null ? (

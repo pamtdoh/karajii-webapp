@@ -3,9 +3,13 @@ import { connect } from 'react-redux';
 
 const HomePage = ({ user }) => {
   if (user == null) {
-    return <h1>aku mau terbang</h1>
+    return (
+      <div className="mt-5 text-center">
+        <h1>Welcome to KARAJII Movies</h1>
+      </div>
+    )  
   } else {
-    return <h1>heh {user.username}, eskrim</h1>
+    return <h1>Hi {user.username}!, eskrim</h1>
   }
 }
 

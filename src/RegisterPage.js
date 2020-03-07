@@ -46,7 +46,7 @@ function RegisterForm() {
           onChange={event => setRegData({...regData, password: event.target.value})} />
       </Form.Group>
       {errorMessage !== "" ? <Form.Text className="text-danger my-1">{errorMessage}</Form.Text> : null}
-      <Button type="submit" className="ml-auto">
+      <Button type="submit" className="btn-warning align-center">
         Submit
       </Button>
     </Form>

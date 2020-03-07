@@ -9,6 +9,9 @@ import HomePage from './HomePage';
 import { BaseApi } from './api';
 import { login } from './actions';
 
+import Landing from './Landing';
+
+import Footer from './Footer';
 
 function App({ dispatch }) {
   useEffect(() => {
@@ -23,13 +26,15 @@ function App({ dispatch }) {
   });
 
   return (
-    <Container fluid="true">
+    <Container fluid="true" className="bg-warning">
       <NavBar />
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
         <Route path="/" component={HomePage} />
+        <Route path="/" component={Landing} />
       </Switch>
+      <Footer />
     </Container>
   );
 }
