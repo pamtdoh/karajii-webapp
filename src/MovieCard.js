@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Col } from 'react-bootstrap';
 
 export class MovieCard extends Component {
   render() {
     return (
-      <div>
-        <Card className="" style={{ width: "15rem" }}>
+      <Col lg={3} md={4}>
+        <Card>
           <Card.Img variant="top" src="../img/1.jpg" />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
@@ -16,7 +16,7 @@ export class MovieCard extends Component {
             <Button variant="danger">Details</Button>
           </Card.Body>
         </Card>
-      </div>
+      </Col>
     );
   }
 }
