@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { Switch, Route } from 'react-router-dom';
+
 import { connect } from 'react-redux';
-import NavBar from './NavBar';
-import LoginPage from './LoginPage';
-import RegisterPage from './RegisterPage';
-import HomePage from './HomePage';
 import { BaseApi } from './api';
 import { login } from './actions';
 
-import Footer from './Footer';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import HomePage from './pages/HomePage';
+
+import Footer from './components/Footer';
+import NavBar from './components/NavBar';
 
 function App({ dispatch }) {
   useEffect(() => {

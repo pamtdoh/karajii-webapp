@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form, Button, Card } from 'react-bootstrap';
-import { BaseApi } from './api';
+import { BaseApi } from '../api';
 
 function RegisterForm() {
   const [regData, setRegData] = useState({username: "", password: ""});

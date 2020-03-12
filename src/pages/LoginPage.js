@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form, Button, Card } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { BaseApi, setToken } from './api';
-import { login } from './actions';
+import { BaseApi, setToken } from '../api';
+import { login } from '../actions';
 
 function LoginForm({ dispatch }) {
   const [loginData, setLoginData] = useState({username: "", password: ""});

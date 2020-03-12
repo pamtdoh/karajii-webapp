@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logout } from './actions';
+import { logout } from '../actions';
 
 function NavBar({ dispatch, user }) {
   const handleLogout = () => {

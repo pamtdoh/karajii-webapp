@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Landing from './Landing';
+import Landing from '../components/home/Landing';
 
-import Catalogue from './Catalogue'
+import Catalogue from '../components/home/Catalogue'
 
 const HomePage = ({ user }) => {
   if (user == null) {
