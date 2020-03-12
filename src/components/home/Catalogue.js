@@ -1,16 +1,27 @@
-import React, { Component } from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import React from "react";
+import { Row } from "react-bootstrap";
 import MovieCard from "./MovieCard";
-import { CardSubtitle } from "react-bootstrap/Card";
+import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux'
 
-export class Catalogue extends Component {
-  render() {
-    let cards = []
-    for (let i = 0; i < 10; i++) {
-      cards.push(<MovieCard/>)
-    }
-    return <Row>{cards}</Row>
-  }
+const Catalogue = ({ catalogueData }) => {
+  const history = useHistory();
+  console.log(catalogueData)
+  return (
+    <Row>
+      {catalogueData.map(movieData => <MovieCard
+        title={movieData.title}
+        cover_image={movieData.cover_image}
+        openMovieDetail= {() => {
+          history.push("/movie/" + movieData.movie_name);
+        }} />
+      )}
+    </Row>
+  )
 }
 
-export default Catalogue;
+const mapStateToProps = state => ({
+  catalogueData: state.catalogue
+})
+
+export default connect(mapStateToProps)(Catalogue);

@@ -11,6 +11,8 @@ import {
   FormLabel,
   Form
 } from "react-bootstrap";
+import { fetchCatalogue } from "../../actions";
+import { connect } from 'react-redux'
 
 const genres = [
   "Action",
@@ -40,15 +42,6 @@ const SearchForm = ({ submitQuery }) => {
   });
 
   return (
-    // <div className="jumbotron jumbotron-fluid mt-5">
-    //   <div className="container">
-    //     <h1 className="display-4 mb-3">
-    //       <i className="fa fa-search" /> Search for movies...
-    //     </h1>
-
-    //   </div>
-    // </div>
-
     <Jumbotron fluid>
       <Container>
         <h1>Welcome to Karajii Movies</h1>
@@ -65,7 +58,7 @@ const SearchForm = ({ submitQuery }) => {
               <Button
                 variant="outline-warning"
                 className="mr-3"
-                onClick={submitQuery}
+                onClick={() => submitQuery(searchQuery)}
               >
                 Search
               </Button>
@@ -87,30 +80,11 @@ const SearchForm = ({ submitQuery }) => {
         </Form.Group>
       </Container>
     </Jumbotron>
-
-    // <form id="searchForm">
-    // <input
-    //   type="text"
-    //   className="form-control"
-    //   name="searchText"
-    //   placeholder="Search Movies..."
-    //   onChange={event => setSearchQuery({...searchQuery, keyword: event.target.value})}
-    // />
-    // <Row className="justify-content-md-center mt-3">
-    //   <ButtonToolbar>
-    //     <Button variant="outline-warning" className="mr-3" onClick={submitQuery}>
-    //       Search
-    //     </Button>
-
-    //     <DropdownButton title={searchQuery.genre || "Genre"} variant="warning">
-    //       {genres.map(x => (
-    //         <Dropdown.Item onClick={() => setSearchQuery({...searchQuery, genre: x})}>{x}</Dropdown.Item>
-    //       ))}
-    //     </DropdownButton>
-    //   </ButtonToolbar>
-    // </Row>
-    // </form>
   );
 };
 
-export default SearchForm;
+const mapDispatchToProps = dispatch => ({
+  submitQuery: searchQuery => dispatch(fetchCatalogue(searchQuery.keyword, searchQuery.genre))
+})
+
+export default connect(null, mapDispatchToProps)(SearchForm);

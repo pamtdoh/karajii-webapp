@@ -7,7 +7,8 @@ export function setToken(token) {
 }
 
 const BaseApi = axios.create({
-  baseURL: "http://139.0.80.88:5000"
+  // baseURL: "http://139.0.80.88:5000"
+  baseURL: "http://localhost:5000"
 });
 
 if (localStorage.getItem('token')) {

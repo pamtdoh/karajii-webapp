@@ -9,6 +9,7 @@ import { login } from './actions';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
+import ProfilePage from './pages/ProfilePage';
 
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
@@ -31,6 +32,7 @@ function App({ dispatch }) {
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
+        <Route path="/user" component={ProfilePage} />
         <Route path="/" component={HomePage} />
       </Switch>
       <Footer />
