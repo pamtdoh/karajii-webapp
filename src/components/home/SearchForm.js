@@ -51,8 +51,7 @@ const SearchForm = ({ submitQuery }) => {
 
     <Jumbotron fluid>
       <Container>
-        <h1>Welcome to Karajii Movies</h1>
-        <p>This is the best movie rental service.</p>
+        <h3>This is the best movie rental service.</h3>
         <Form.Group controlId="formMovies">
           <Form.Control type="search  " placeholder="Search movies..." onChange={event =>
             setSearchQuery({ ...searchQuery, keyword: event.target.value })
