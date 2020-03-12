@@ -38,3 +38,23 @@ export function fetchCatalogue(keyword, genre) {
     })
   }
 }
+
+export function fetchSelectedMovieDetail(movie_name) {
+  return dispatch => {
+    return BaseApi.get("/movie/" + movie_name)
+    .then(response => {
+      dispatch(receiveSelectedMovieDetail(response.data));
+      console.log(response);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+}
+
+export function receiveSelectedMovieDetail(payload) {
+  return {
+    type: "RECEIVE_SELECTED_MOVIE",
+    selectedMovie: payload
+  }
+}

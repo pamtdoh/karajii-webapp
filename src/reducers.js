@@ -20,6 +20,15 @@ const catalogue = (state = [], action) => {
     }
 }
 
+const selectedMovie = (state = null, action) => {
+    switch (action.type) {
+        case "RECEIVE_SELECTED_MOVIE":
+            return action.selectedMovie;
+        default:
+            return state;
+    }
+}
+
 // const search = (state = { keyword: "", genre: "" }, action) => {
 //     switch (action.type) {
 //         case "SEARCH_MOVIES":
@@ -32,6 +41,7 @@ const catalogue = (state = [], action) => {
 const rootReducer = combineReducers({
     currentUser,
     catalogue,
+    selectedMovie
     // search
 });
 

@@ -21,12 +21,12 @@ const MovieDetail = ({
             <Image src={coverImage} />
             <Card.Content>
               <Card.Header>
-                <b>Title</b>
+                <b>{title}</b>
               </Card.Header>
               <Card.Meta>
-                <div className="year mt-2">2015</div>
-                <Button className='mt-3' animated="vertical" color="red" onClick={rentMovie} style={{ width: '20%' }}>
-                  <Button.Content hidden>Rent $5</Button.Content>
+                <div className="year mt-2">{year}</div>
+                <Button className='mt-3' animated="vertical" color="red" onClick={rentMovie} style={{ width: '25%' }}>
+                  <Button.Content hidden>Rent {'$'}{price}</Button.Content>
                   <Button.Content visible>
                     <Icon name="shop" />
                   </Button.Content>
@@ -58,10 +58,10 @@ const MovieDetail = ({
         <Grid.Column width={3}>
           <Segment color="brown">{title}</Segment>
           <Segment color="brown">{year}</Segment>
-          <Segment color="brown">{genre}</Segment>
-          <Segment color="brown">{duration}</Segment>
-          <Segment color="brown">{stock}</Segment>
-          <Segment color="brown">{price}</Segment>
+          <Segment color="brown">{genre.join(', ')}</Segment>
+          <Segment color="brown">{duration} {"mins"} </Segment>
+          <Segment color="brown">{stock} {'item(s)'}</Segment>
+          <Segment color="brown">{'$'}{price}</Segment>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>

@@ -16,8 +16,8 @@ function NavBar({ dispatch, user }) {
         <Navbar.Brand><b>KARAJII</b></Navbar.Brand>
       </Link>
       <Nav className="mr-auto sticky-top">
-        <Link to="/heh" className="nav-link">
-          Ganteng gw
+        <Link to="/about" className="nav-link">
+          About
         </Link>
       </Nav>
       {user == null ? (

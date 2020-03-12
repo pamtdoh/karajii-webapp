@@ -55,7 +55,7 @@ const SearchForm = ({ submitQuery }) => {
           <Row className="justify-content-md-center mt-3">
             <ButtonToolbar>
               <Button
-                variant="outline-warning"
+                variant="outline-danger"
                 className="mr-3"
                 onClick={() => submitQuery(searchQuery)}
               >
@@ -64,7 +64,7 @@ const SearchForm = ({ submitQuery }) => {
 
               <DropdownButton
                 title={searchQuery.genre || "Genre"}
-                variant="warning"
+                variant="dark"
               >
                 {genres.map(x => (
                   <Dropdown.Item

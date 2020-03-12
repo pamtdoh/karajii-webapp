@@ -10,6 +10,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import ProfilePage from './pages/ProfilePage';
+import MovieDetailPage from './pages/MovieDetailPage';
 
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
@@ -29,13 +30,13 @@ function App({ dispatch }) {
   });
 
   return (
-    <Container fluid="true" className="bg-warning">
+    <Container fluid="true" className="bg-light">
       <NavBar />
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
         <Route path="/user" component={ProfilePage} />
-        <Route path="/movie" component={MovieDetailPage} />
+        <Route path="/movie/:movie_name" component={MovieDetailPage} />
         <Route path="/" component={HomePage} />
       </Switch>
       <Footer />

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Button, Col } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
 
 const MovieCard = ({ title, cover_image, openMovieDetail }) => {
   return (
