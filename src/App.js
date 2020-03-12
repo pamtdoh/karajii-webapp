@@ -14,6 +14,8 @@ import ProfilePage from './pages/ProfilePage';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 
+import 'semantic-ui-css/semantic.min.css'
+
 function App({ dispatch }) {
   useEffect(() => {
     const fetchUserData = async () => {
@@ -33,6 +35,7 @@ function App({ dispatch }) {
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
         <Route path="/user" component={ProfilePage} />
+        <Route path="/movie" component={MovieDetailPage} />
         <Route path="/" component={HomePage} />
       </Switch>
       <Footer />
